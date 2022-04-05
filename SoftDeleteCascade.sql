@@ -35,7 +35,7 @@ BEGIN CATCH
 END CATCH
 GO
 
--- Criacao e popula tabelas para teste da procedure a cima
+-- Cria e popula tabelas (Empresas, Funcionarios, Dependentes e Contatos) para teste da procedure a cima
 IF OBJECT_ID('Empresas') IS NULL 
 	CREATE TABLE Empresas (
 	  Id    INT PRIMARY KEY,
@@ -126,11 +126,11 @@ BEGIN
 END
 GO
 
--- executa a exclusao da empresa de id=1
+-- Executa a exclusao da empresa de id=1
 exec dbo.[sp_SoftDeleteCascade] 'empresas', 'ID', '= 1'
 GO
 
--- conferencia das tabelas com registros excluidos em cascata pela procedure sp_SoftDeleteCascade
+-- Conferencia das tabelas com registros excluidos em cascata pela procedure sp_SoftDeleteCascade
 SELECT * FROM Empresas
 SELECT * FROM Funcionarios
 SELECT * FROM Dependentes
