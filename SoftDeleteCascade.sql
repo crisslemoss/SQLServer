@@ -130,7 +130,7 @@ GO
 exec dbo.[sp_SoftDeleteCascade] 'empresas', 'ID', '= 1'
 GO
 
--- Conferencia das tabelas com registros excluidos em cascata pela procedure sp_SoftDeleteCascade
+-- Conferência das tabelas com registros excluidos em cascata pela procedure sp_SoftDeleteCascade
 SELECT * FROM Empresas
 SELECT * FROM Funcionarios
 SELECT * FROM Dependentes
